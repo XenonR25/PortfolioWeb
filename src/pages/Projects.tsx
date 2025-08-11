@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 import { MdDeveloperMode } from "react-icons/md";
+import snake from "../assets/Snake-Game.jpg"
+import todo from "../assets/to-do.jpg"
+import xeno from "../assets/eno.png"
+import gorulagbe from "../assets/Gorulagbe.png"
+import reactquiz from "../assets/React-Quiz.png"
+import brickbreaker from "../assets/brickbreaker.png"
+import mission from "../assets/mission.jpg"
+import salefy from "../assets/salefy.jpg"
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -10,7 +18,7 @@ const Projects = () => {
       title: "Salefy",
       description:
         "Frontend-only e-commerce application with a hero section, dynamic offers, sample products, ads, and a contact section. Emphasis on UX, responsive layout, and engaging visuals.",
-      image: "https://images.pexels.com/photos/686339/pexels-photo-686339.jpeg?auto=compress&w=500&h=300&fit=crop",
+      image: salefy,
       category: "frontend",
       technologies: ["ReactJS", "Tailwind CSS", "data-aos"],
       liveUrl: "https://github.com/XenonR25/salefy",
@@ -25,7 +33,7 @@ const Projects = () => {
       title: "GoruLagbe",
       description:
         "A cattle marketplace platform for direct farmer-to-vendor transactions with auctions, detailed listings, and seamless communication. Scalable and user-friendly.",
-      image: "https://images.pexels.com/photos/460775/pexels-photo-460775.jpeg?auto=compress&w=500&h=300&fit=crop",
+      image: gorulagbe,
       category: "fullstack",
       technologies: ["ReactJS", "Raw CSS", "NodeJS", "ExpressJS", "MySQL"],
       liveUrl: "https://github.com/Rifat-2020831030/gorulagbe/tree/rahik",
@@ -40,7 +48,7 @@ const Projects = () => {
       title: "React-Quiz",
       description:
         "Interactive quiz app where users choose video topics and take quizzes with real-time data from Firebase. Responsive, engaging, and tracks user progress.",
-      image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&w=500&h=300&fit=crop",
+      image: reactquiz,
       category: "frontend",
       technologies: ["ReactJS", "Raw CSS", "Firebase"],
       liveUrl: "https://github.com/XenonR25/React-Quiz",
@@ -55,7 +63,7 @@ const Projects = () => {
       title: "BrickBreaker",
       description:
         "Classic arcade brick breaker game with paddle control, ball physics, scoring, and classic design. Built with teamwork for smooth gameplay.",
-      image: "https://images.pexels.com/photos/209728/pexels-photo-209728.jpeg?auto=compress&w=500&h=300&fit=crop",
+      image: brickbreaker,
       category: "desktop",
       technologies: ["Java", "JavaFX"],
       liveUrl: "https://github.com/XenonR25/GameProject",
@@ -70,7 +78,7 @@ const Projects = () => {
       title: "Mission Horizon",
       description:
         "Multi-level space shooter game with enemy ships, obstacles, sound, animations, scores, and lives. Focus on engaging, balanced gameplay.",
-      image: "https://images.pexels.com/photos/3945685/pexels-photo-3945685.jpeg?auto=compress&w=500&h=300&fit=crop",
+      image: mission,
       category: "desktop",
       technologies: ["C++", "SFML"],
       liveUrl: "https://github.com/XenonR25/MISSION-HORIZON",
@@ -79,6 +87,53 @@ const Projects = () => {
         "Multiple levels & increasing difficulty",
         "Sound and animation effects",
         "Score and lives system"
+      ],
+    },
+  
+    {
+      title: "Xeno",
+      description:
+        "Responsive study web application that generates dynamic quizzes from uploaded study documents or PDFs. Features multiple-choice questions and answers, instant result feedback, and cool animations. Utilizes OpenAI’s API to analyze content and create tailored questions. Built with NextJS, FastAPI, and Postgres.",
+      image: xeno,
+      category: "fullstack",
+      technologies: ["NextJS", "FastAPI", "Postgres", "OpenAI API"],
+      liveUrl: "https://github.com/XenonR25/Xeno", 
+      githubUrl: "https://github.com/XenonR25/Xeno",
+      features: [
+        "Upload documents, receive instant quizzes",
+        "OpenAI-powered question generation",
+        "Animated, responsive interface",
+        "Real-time scoring and feedback"
+      ],
+    },
+    {
+      title: "ToDo App",
+      description:
+        "Simple and effective task management tool where users can create, update, and delete to-do items. Built with NodeJS and ExpressJS.",
+      image: todo ,
+      category: "fullstack",
+      technologies: ["NodeJS", "ExpressJS"],
+      liveUrl: "https://github.com/XenonR25/TO-DO-app", // update if there is a live version
+      githubUrl: "https://github.com/XenonR25/TO-DO-app",
+      features: [
+        "Create, update, and delete tasks",
+        "Simple RESTful API structure",
+        "Lightweight and easy to deploy"
+      ],
+    },
+    {
+      title: "Snake Game",
+      description:
+        "Classic Snake game recreated with modern smooth gameplay and controls. Coded using C++ and SFML library for high-performance graphics.",
+      image: snake,
+      category: "desktop",
+      technologies: ["C++", "SFML"],
+      liveUrl: "https://github.com/XenonR25/Game-Project", // update with actual URL if any
+      githubUrl: "https://github.com/XenonR25/Game-Project",
+      features: [
+        "Classic snake movement & growth logic",
+        "Keyboard controls",
+        "Score tracking and game over detection"
       ],
     },
   ];

@@ -2,23 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
 import Image1 from "../assets/personal.jpg";
-import Rahik from "../assets/Rahik.pdf"
+import Rahik from "../assets/Rahik's CV.pdf";
+import salefy from "../assets/salefy.jpg"
+import gorulagbe from "../assets/Gorulagbe.png"
+import reactquiz from "../assets/React-Quiz.png"
 
 const featuredProjects = [
   {
     title: "Salefy",
     description:
       "A frontend-only e-commerce app with dynamic offers, bestselling products, ads, contact, and beautiful animations. Built using ReactJS and TailwindCSS.",
+    image: salefy
   },
   {
     title: "GoruLagbe",
     description:
       "A digital cattle trading platform enabling auctions, listings, and direct transactions between farmers and vendors. ReactJS, Raw CSS, NodeJS, ExpressJS, MySQL.",
+    image: gorulagbe
   },
   {
     title: "React Quiz",
     description:
       "Interactive quiz app with video-linked quizzes and real-time data from Firebase. Built with ReactJS and Raw CSS.",
+    image: reactquiz
   },
 ];
 
@@ -71,7 +77,7 @@ const Home = () => {
 
               <a
                 href={Rahik}
-                download="Rahik.pdf"
+                download="Rahik's CV.pdf"
                 className="inline-flex items-center px-8 py-3 bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-semibold rounded-lg transition-all hover:bg-white/5"
               >
                 Download CV
@@ -186,7 +192,13 @@ const Home = () => {
                 data-aos="zoom-in"
                 data-aos-delay={200 + idx * 100}
               >
-                <div className="h-48 bg-gradient-to-br from-emerald-400 to-emerald-600"></div>
+                <div className="h-48 w-full overflow-hidden">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-slate-800 mb-2 group-hover:text-emerald-600 transition-colors">
                     {p.title}

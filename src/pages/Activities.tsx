@@ -1,25 +1,26 @@
 import React from "react";
-import { Users, Facebook, Mail } from "lucide-react";
+import { Users, Facebook, Mail, Youtube } from "lucide-react";
 import { FaFacebookSquare, FaYoutube, FaWhatsapp } from "react-icons/fa";
-
-const thumbnailUrl =
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80"; // Replace with your image
+import thumbnail from "../assets/ongikar.jpg";
 
 const facebookLinks = [
   {
     label: "Stage Performance | University Event",
-    url: "https://www.facebook.com/yourorgpage/posts/123456789",
+    url: "https://www.facebook.com/share/v/1748nwfaqx/",
     type: "Performance",
+    media: "Facebook"
   },
   {
-    label: "Islamic Song Compilation Video",
-    url: "https://www.facebook.com/yourorgpage/videos/234567890",
+    label: "Quran Recitation Video",
+    url: "",
     type: "Video",
+    media: "Youtube"
   },
   {
     label: "Practice Session Highlights",
-    url: "https://www.facebook.com/yourorgpage/posts/345678901",
+    url: "https://www.facebook.com/ongikar94/videos/727089349925189/",
     type: "Practice",
+    media : "Facebook"
   },
 ];
 
@@ -27,12 +28,12 @@ const connectLinks = [
   {
     icon: <FaFacebookSquare className="text-blue-600 w-6 h-6" />,
     label: "Facebook Page",
-    url: "https://facebook.com/ongikarclub", // Replace
+    url: "https://www.facebook.com/ongikar94?mibextid=ZbWKwL", // Replace
   },
   {
     icon: <FaYoutube className="text-red-600 w-6 h-6" />,
     label: "YouTube Channel",
-    url: "https://www.youtube.com/channel/ongikar", // Replace if you have
+    url: "https://www.youtube.com/@onghikartv399", // Replace if you have
   },
   {
     icon: <FaWhatsapp className="text-green-600 w-6 h-6" />,
@@ -54,10 +55,11 @@ const Activities = () => (
         className="relative rounded-3xl overflow-hidden shadow-2xl mb-12 flex flex-col md:flex-row"
         data-aos="fade-in"
       >
+      
         <img
-          src={thumbnailUrl}
+          src={thumbnail}
           alt="Ongikar Shangskritik Shongshod"
-          className="object-cover h-64 w-full md:w-2/5"
+          className="object-contain h-50 w-full md:w-2/5 object-center bg-gray-400 bg-opacity-55"
         />
         <div className="bg-white bg-opacity-90 backdrop-blur p-7 md:p-10 flex-1 flex flex-col justify-center">
           <div className="flex items-center mb-2 gap-2">
@@ -70,7 +72,11 @@ const Activities = () => (
             Coordinator
           </span>
           <p className="text-slate-700 text-base md:text-lg mt-2 leading-relaxed">
-            An Islamic cultural student organization dedicated to composing and performing Islamic songs, organizing events, and establishing Islamic culture in our society. We strive to spread the beauty of Islamic arts and values through creative teamwork, event performances, and collaboration with the community.
+            An Islamic cultural student organization dedicated to composing and
+            performing Islamic songs, organizing events, and establishing
+            Islamic culture in our society. We strive to spread the beauty of
+            Islamic arts and values through creative teamwork, event
+            performances, and collaboration with the community.
           </p>
 
           {/* Connect Row */}
@@ -106,34 +112,42 @@ const Activities = () => (
       </div>
 
       {/* Showcase / Cards */}
-      <div className="grid md:grid-cols-2 gap-7" data-aos="fade-up" data-aos-delay="200">
-        {facebookLinks.map((item, idx) => (
-          <a
-            key={idx}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-2xl p-6 w-full bg-white border shadow transition duration-200 hover:border-emerald-200 hover:shadow-lg flex items-center gap-4"
-            data-aos="zoom-in"
-            data-aos-delay={idx * 100}
-          >
-            <div className="flex flex-col items-center flex-shrink-0">
-              <Facebook className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform" />
-              <span className="text-xs text-slate-400 mt-2 font-semibold">
-                {item.type}
-              </span>
-            </div>
-            <div>
-              <div className="font-semibold text-slate-800 group-hover:text-emerald-600 leading-snug">
-                {item.label}
-              </div>
-              <div className="text-xs mt-2 text-slate-600 italic">
-                View on Facebook
-              </div>
-            </div>
-          </a>
-        ))}
+      <div
+  className="grid md:grid-cols-2 gap-7"
+  data-aos="fade-up"
+  data-aos-delay="200"
+>
+  {facebookLinks.map((item, idx) => (
+    <a
+      key={idx}
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group rounded-2xl p-6 w-full bg-white border shadow transition duration-200 hover:border-emerald-200 hover:shadow-lg flex items-center gap-4"
+      data-aos="zoom-in"
+      data-aos-delay={idx * 100}
+    >
+      <div className="flex flex-col items-center flex-shrink-0">
+        {item.media === "Facebook" ? (
+          <Facebook className="w-10 h-10 text-blue-600 group-hover:scale-110 transition-transform" />
+        ) : item.media === "Youtube" ? (
+          <Youtube className="w-10 h-10 text-red-500 group-hover:scale-110 transition-transform" />
+        ) : null}
+        <span className="text-xs text-slate-400 mt-2 font-semibold">
+          {item.type}
+        </span>
       </div>
+      <div>
+        <div className="font-semibold text-slate-800 group-hover:text-emerald-600 leading-snug">
+          {item.label}
+        </div>
+        <div className="text-xs mt-2 text-slate-600 italic">
+          View on {item.media}
+        </div>
+      </div>
+    </a>
+  ))}
+</div>
     </div>
   </div>
 );
